@@ -33,7 +33,7 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:onClick="showTerms"
-    android:text="@string/terms_button_text"
+    android:text="@string/terms_text"
     app:layout_constraintBottom_toTopOf="@+id/courses_button"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent" />
@@ -49,7 +49,7 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:onClick="showCourses"
-    android:text="@string/courses_button_text"
+    android:text="@string/courses_text"
     app:layout_constraintBottom_toTopOf="@+id/assessments_button"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent" />
@@ -65,7 +65,7 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:onClick="showAssessments"
-    android:text="@string/assessments_button_text"
+    android:text="@string/assessments_text"
     app:layout_constraintBottom_toTopOf="@+id/mentors_button"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent" />
@@ -81,7 +81,7 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:onClick="showMentors"
-    android:text="@string/mentors_button_text"
+    android:text="@string/mentors_text"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent" />

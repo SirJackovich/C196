@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
   public void showTerms(View view) {
 
-    // Create an Intent to start the terms activity
+    // Create an Intent to start the activity
     Intent termsIntent = new Intent(this, TermsActivity.class);
 
     // Start the new activity.
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
   public void showCourses(View view) {
 
-    // Create an Intent to start the terms activity
+    // Create an Intent to start the activity
     Intent coursesIntent = new Intent(this, CoursesActivity.class);
 
     // Start the new activity.
@@ -34,16 +33,16 @@ public class MainActivity extends AppCompatActivity {
 
   public void showAssessments(View view) {
 
-    // Create an Intent to start the terms activity
-    Intent assesmentsIntent = new Intent(this, AssessmentsActivity.class);
+    // Create an Intent to start the activity
+    Intent assessmentsIntent = new Intent(this, AssessmentsActivity.class);
 
     // Start the new activity.
-    startActivity(assesmentsIntent);
+    startActivity(assessmentsIntent);
   }
 
   public void showMentors(View view) {
 
-    // Create an Intent to start the terms activity
+    // Create an Intent to start the activity
     Intent mentorsIntent = new Intent(this, MentorsActivity.class);
 
     // Start the new activity.
