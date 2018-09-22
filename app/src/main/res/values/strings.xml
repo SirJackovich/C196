@@ -1,0 +1,12 @@
+<resources>
+  <string name="app_name">C196</string>
+  <string name="terms_button_text">Terms</string>
+  <string name="mentors_button_text">Mentors</string>
+  <string name="assessments_button_text">Assessments</string>
+  <string name="courses_button_text">Courses</string>
+  <string name="main_text">Welcom to the C196 app</string>
+  <string name="terms_text">Terms</string>
+  <string name="courses_text">Courses</string>
+  <string name="mentors_text">Mentors</string>
+  <string name="assessments_text">Assessments</string>
+</resources>
