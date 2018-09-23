@@ -12,25 +12,25 @@
     <activity android:name=".MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
+
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
     <activity
       android:name=".TermsActivity"
-      android:label="@string/terms_text" />
+      android:parentActivityName=".MainActivity"/>
     <activity
       android:name=".CoursesActivity"
-      android:label="@string/courses_text" />
+      android:parentActivityName=".MainActivity"/>
     <activity
       android:name=".MentorsActivity"
-      android:label="@string/mentors_text" />
+      android:parentActivityName=".MainActivity"/>
     <activity
       android:name=".AssessmentsActivity"
-      android:label="@string/assessments_text"
-      android:theme="@style/AppTheme.NoActionBar" />
+      android:parentActivityName=".MainActivity"/>
     <activity
       android:name=".AssessmentsDetailsActivity"
-      android:label="@string/assessment_details" />
+      android:parentActivityName=".AssessmentsActivity"/>
   </application>
 
 </manifest>

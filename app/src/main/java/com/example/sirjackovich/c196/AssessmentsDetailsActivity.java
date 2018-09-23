@@ -1,14 +1,15 @@
 package com.example.sirjackovich.c196;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 
-public class AssessmentsDetailsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class AssessmentsDetailsActivity extends AppCompatActivity  {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +18,6 @@ public class AssessmentsDetailsActivity extends AppCompatActivity implements Ada
 
     // Setup the spinner
     Spinner spinner = (Spinner) findViewById(R.id.type_spinner);
-    spinner.setOnItemSelectedListener(this);
     // Create an ArrayAdapter using the string array and a default spinner layout
     ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
       R.array.assessment_types, android.R.layout.simple_spinner_item);
@@ -27,17 +27,20 @@ public class AssessmentsDetailsActivity extends AppCompatActivity implements Ada
     spinner.setAdapter(adapter);
   }
 
-  public void onItemSelected(AdapterView<?> parent, View view,
-                             int pos, long id) {
-    // An item was selected. You can retrieve the selected item using
-    // parent.getItemAtPosition(pos)
-  }
-
-  public void onNothingSelected(AdapterView<?> parent) {
-    // Another interface callback
-  }
-
   public void handleCancel(View view){
     onBackPressed();
+  }
+
+  public void handleSave(View view){
+    Spinner spinner = findViewById(R.id.type_spinner);
+    EditText title = findViewById(R.id.title_edit_text);
+    EditText dueDate = findViewById(R.id.due_date_edit_text);
+
+    Intent intent = new Intent();
+    intent.putExtra("type", spinner.getSelectedItem().toString());
+    intent.putExtra("title", title.getText().toString());
+    intent.putExtra("dueDate", dueDate.getText().toString());
+    setResult(RESULT_OK, intent);
+    finish();
   }
 }
