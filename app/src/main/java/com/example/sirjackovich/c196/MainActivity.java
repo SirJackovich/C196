@@ -14,38 +14,26 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void showTerms(View view) {
-
-    // Create an Intent to start the activity
-    Intent termsIntent = new Intent(this, TermsActivity.class);
-
-    // Start the new activity.
-    startActivity(termsIntent);
+    showActivity(TermsActivity.class);
   }
 
   public void showCourses(View view) {
-
-    // Create an Intent to start the activity
-    Intent coursesIntent = new Intent(this, CoursesActivity.class);
-
-    // Start the new activity.
-    startActivity(coursesIntent);
+    showActivity(CoursesActivity.class);
   }
 
   public void showAssessments(View view) {
-
-    // Create an Intent to start the activity
-    Intent assessmentsIntent = new Intent(this, AssessmentsActivity.class);
-
-    // Start the new activity.
-    startActivity(assessmentsIntent);
+    showActivity(AssessmentsActivity.class);
   }
 
   public void showMentors(View view) {
+    showActivity(MentorsActivity.class);
+  }
 
+  public void showActivity(Class activityClass){
     // Create an Intent to start the activity
-    Intent mentorsIntent = new Intent(this, MentorsActivity.class);
+    Intent intent = new Intent(this, activityClass);
 
     // Start the new activity.
-    startActivity(mentorsIntent);
+    startActivity(intent);
   }
 }

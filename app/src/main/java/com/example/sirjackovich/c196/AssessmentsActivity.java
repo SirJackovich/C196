@@ -38,7 +38,7 @@ public class AssessmentsActivity extends AppCompatActivity {
   String[] title;
   String[] description;
   int[] icon;
-  ArrayList<Assessment> arrayList = new ArrayList<Assessment>();
+  ArrayList<Assessment> arrayList = new ArrayList<>();
 
   @RequiresApi(api = Build.VERSION_CODES.O)
   @Override
@@ -65,15 +65,6 @@ public class AssessmentsActivity extends AppCompatActivity {
     listView.setAdapter(adapter);
   }
 
-  public void showAssessmentDetails(View view) {
-
-    // Create an Intent to start the activity
-    Intent assessmentDetailsIntent = new Intent(this, AssessmentsDetailsActivity.class);
-
-    // Start the new activity.
-    startActivityForResult(assessmentDetailsIntent,1);
-  }
-
   public void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
     if (requestCode == 1) {
@@ -85,7 +76,14 @@ public class AssessmentsActivity extends AppCompatActivity {
         assessment.setDueDate(dueDate);
         assessment.setTitle(title);
         assessment.setType(type);
-        // add assessemt to a list
+        listView = findViewById(R.id.listView);
+        // add assessment to a list
+        arrayList.add(assessment);
+        //pass results to listViewAdapter class
+        adapter = new ListViewAdapter(this, arrayList);
+
+        //bind the adapter to the listview
+        listView.setAdapter(adapter);
       }
     }
   }
@@ -101,7 +99,10 @@ public class AssessmentsActivity extends AppCompatActivity {
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
       case R.id.action_create:
-        Toast.makeText(this, "update clicked", Toast.LENGTH_SHORT).show();
+        // Create an Intent to start the activity
+        Intent assessmentDetailsIntent = new Intent(this, AssessmentsDetailsActivity.class);
+
+        startActivityForResult(assessmentDetailsIntent, 1);
         return true;
 
       default:

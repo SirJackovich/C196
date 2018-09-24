@@ -2,6 +2,7 @@ package com.example.sirjackovich.c196;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -16,6 +17,9 @@ public class AssessmentsDetailsActivity extends AppCompatActivity  {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_assessments_details);
 
+    ActionBar actionBar = getSupportActionBar();
+    actionBar.setTitle("Assessment Details");
+
     // Setup the spinner
     Spinner spinner = (Spinner) findViewById(R.id.type_spinner);
     // Create an ArrayAdapter using the string array and a default spinner layout
@@ -25,6 +29,10 @@ public class AssessmentsDetailsActivity extends AppCompatActivity  {
     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     // Apply the adapter to the spinner
     spinner.setAdapter(adapter);
+
+    String titleString = getIntent().getStringExtra("title");
+    EditText title = findViewById(R.id.title_edit_text);
+    title.setText(titleString);
   }
 
   public void handleCancel(View view){
